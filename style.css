@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  font-family: 'Poppins', sans-serif;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+html,
+body,
+svg {
+  height: 100%;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* CSS Reset */
+
+
+header {
+  box-shadow: 4px 8px 20px rgba(0, 0, 0, .05);
+}
+
+.container {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.logo {
+  min-width: 8rem;
+  padding: .5rem 0;
+}
+
+.primary-header {
+  gap: 2rem;
+  padding: .5rem 1rem;
+  justify-content: space-between;
+}
+
+.primary-nav {
+  width: 100%;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.primary-nav li a {
+  color: gray;
+  transition: color ease-in-out .3s;
+}
+.primary-nav li a:hover {
+  color: black;
+}
+
+.left-nav,
+.right-nav {
+  gap: 2rem;
+  align-items: center;
+}
+
+.primary-button {
+  background-color: hsl(180, 86%, 56%);
+  border: 0;
+  width: max-content;
+  padding: .5rem 1rem;
+  border-radius: 2rem;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  opacity: .85;
+}
+
+.bar {
+  display: none;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+.nav-toggler {
+  display: none;
+}
+
+@media (max-width: 45rem) {
+  .primary-nav {
+    display: none;
+    position: fixed;
+    left: 15%;
+    top: 8%;
+    background-color: hsl(258, 27%, 33%);
+    flex-direction: column;
+    padding: 3rem 0;
+    width: 70%;
+    border-radius: .8rem;
+  }
+
+  .primary-nav[data-visible="true"] {
+    display: flex;
+  }
+
+  .left-nav,
+  .right-nav {
+    flex-direction: column;
+  }
+
+  .primary-nav li a {
+    color: rgb(255, 255, 255);
+  }
+  .primary-nav li a:hover {
+    color: rgb(88, 195, 249);
+  }
+
+  .bar {
+    display: block;
+    border: 0;
+    height: 1px;
+    background-color: gray;
+    width: 80%;
+    margin-inline: auto;
+  }
+
+  .primary-button {
+    width: 80%;
+    padding: .8rem 0;
+  }
+
+  .nav-toggler {
+    display: block;
+    margin-top: .75rem;
+    cursor: pointer;
+  }
+
+  .nav-toggler[aria-expanded="false"] {
+    background: url(icon/menu.png);
+    width: 1.5rem;
+    height: 1.5rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 0;
+  }
+
+  .nav-toggler[aria-expanded="true"] {
+    background: url(icon/close.png);
+    width: 1.5rem;
+    height: 1.5rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 0;
+  }
+  
+}
